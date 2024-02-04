@@ -10,11 +10,11 @@ public class BeerMapperImpl implements BeerMapper {
 
     @Override
     public BeerDto mapBeerToBeerDto(Beer beer) {
-        return null;
+        return new BeerDto(beer.getId(), beer.getName(), beer.getDescription());
     }
 
     @Override
     public Beer mapBeerDtoToBeer(BeerDto beerDto) {
-        return null;
+        return new Beer(beerDto.getId(), beerDto.getName(), beerDto.getDescription());
     }
 }
