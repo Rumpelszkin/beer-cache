@@ -13,7 +13,7 @@ public class BeerRestClient {
     private BeerService beerService;
 
     @GetMapping("/{beerId}")
-    public BeerDto getBeerById(@PathVariable("beerId") Long id) {
+    public BeerDto getBeerById(@PathVariable("beerId") Long id) throws InterruptedException {
         return beerService.getBeerById(id);
     }
 }
