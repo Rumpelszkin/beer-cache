@@ -27,10 +27,10 @@ public class BeerServiceImpl implements BeerService {
 
     @Override
     public BeerDto getBeerById(Long id) throws InterruptedException {
-        var xxx = beerCache.getItem(id);
-        if(xxx != null) {
-            log.info(VALUE_FROM_GAINED_FROM_CACHE, xxx);
-            return xxx;
+        var cachedBeer = beerCache.getItem(id);
+        if(cachedBeer != null) {
+            log.info(VALUE_FROM_GAINED_FROM_CACHE, cachedBeer);
+            return cachedBeer;
         } else {
             var beerDto =  beerMapper.mapBeerToBeerDto(
                     beerRepository.findById(id)
